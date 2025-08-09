@@ -1,4 +1,4 @@
-module github.com/sqls-server/sqls
+module github.com/yaamai/sqls
 
 go 1.21
 
@@ -10,7 +10,6 @@ require (
 	github.com/google/go-cmp v0.5.9
 	github.com/jackc/pgx/v4 v4.18.1
 	github.com/jfcote87/sshdb v0.5.3
-	github.com/k0kubun/colorstring v0.0.0-20150214042306-9440f1994b88 // indirect
 	github.com/sourcegraph/jsonrpc2 v0.2.0
 	github.com/urfave/cli/v2 v2.27.0
 	golang.org/x/crypto v0.17.0
@@ -18,6 +17,7 @@ require (
 )
 
 require (
+	github.com/ClickHouse/clickhouse-go/v2 v2.17.1
 	github.com/k0kubun/pp v3.0.1+incompatible
 	github.com/mattn/go-sqlite3 v1.14.19
 	github.com/olekukonko/tablewriter v0.0.5
@@ -26,7 +26,6 @@ require (
 
 require (
 	github.com/ClickHouse/ch-go v0.58.2 // indirect
-	github.com/ClickHouse/clickhouse-go/v2 v2.17.1 // indirect
 	github.com/andybalholm/brotli v1.0.6 // indirect
 	github.com/cpuguy83/go-md2man/v2 v2.0.3 // indirect
 	github.com/elastic/go-sysinfo v1.11.2 // indirect
@@ -46,6 +45,7 @@ require (
 	github.com/jackc/pgservicefile v0.0.0-20231201235250-de7065d80cb9 // indirect
 	github.com/jackc/pgtype v1.14.0 // indirect
 	github.com/joeshaw/multierror v0.0.0-20140124173710-69b34d4ec901 // indirect
+	github.com/k0kubun/colorstring v0.0.0-20150214042306-9440f1994b88 // indirect
 	github.com/klauspost/compress v1.16.7 // indirect
 	github.com/mattn/go-colorable v0.1.6 // indirect
 	github.com/mattn/go-isatty v0.0.12 // indirect

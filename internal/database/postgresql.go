@@ -14,7 +14,7 @@ import (
 
 	"github.com/jackc/pgx/v4"
 	"github.com/jackc/pgx/v4/stdlib"
-	"github.com/sqls-server/sqls/dialect"
+	"github.com/yaamai/sqls/dialect"
 	"golang.org/x/crypto/ssh"
 )
 

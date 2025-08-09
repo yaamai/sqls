@@ -1,9 +1,9 @@
 package parseutil
 
 import (
-	"github.com/sqls-server/sqls/ast"
-	"github.com/sqls-server/sqls/ast/astutil"
-	"github.com/sqls-server/sqls/token"
+	"github.com/yaamai/sqls/ast"
+	"github.com/yaamai/sqls/ast/astutil"
+	"github.com/yaamai/sqls/token"
 )
 
 type NodeWalker struct {

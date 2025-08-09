@@ -14,8 +14,8 @@ import (
 	"github.com/sourcegraph/jsonrpc2"
 	"github.com/urfave/cli/v2"
 
-	"github.com/sqls-server/sqls/internal/config"
-	"github.com/sqls-server/sqls/internal/handler"
+	"github.com/yaamai/sqls/internal/config"
+	"github.com/yaamai/sqls/internal/handler"
 )
 
 const name = "sqls"

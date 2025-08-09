@@ -7,7 +7,7 @@ import (
 	"log"
 
 	_ "github.com/mattn/go-sqlite3"
-	"github.com/sqls-server/sqls/dialect"
+	"github.com/yaamai/sqls/dialect"
 )
 
 func init() {

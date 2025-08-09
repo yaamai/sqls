@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/sqls-server/sqls/ast"
-	"github.com/sqls-server/sqls/dialect"
-	"github.com/sqls-server/sqls/token"
+	"github.com/yaamai/sqls/ast"
+	"github.com/yaamai/sqls/dialect"
+	"github.com/yaamai/sqls/token"
 )
 
 type NodeMatcher struct {

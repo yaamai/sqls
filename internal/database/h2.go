@@ -7,7 +7,7 @@ import (
 	"log"
 
 	_ "github.com/CodinGame/h2go"
-	"github.com/sqls-server/sqls/dialect"
+	"github.com/yaamai/sqls/dialect"
 )
 
 func init() {

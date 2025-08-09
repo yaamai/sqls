@@ -3,12 +3,12 @@ package formatter
 import (
 	"errors"
 
-	"github.com/sqls-server/sqls/ast"
-	"github.com/sqls-server/sqls/ast/astutil"
-	"github.com/sqls-server/sqls/internal/config"
-	"github.com/sqls-server/sqls/internal/lsp"
-	"github.com/sqls-server/sqls/parser"
-	"github.com/sqls-server/sqls/token"
+	"github.com/yaamai/sqls/ast"
+	"github.com/yaamai/sqls/ast/astutil"
+	"github.com/yaamai/sqls/internal/config"
+	"github.com/yaamai/sqls/internal/lsp"
+	"github.com/yaamai/sqls/parser"
+	"github.com/yaamai/sqls/token"
 )
 
 func Format(text string, params lsp.DocumentFormattingParams, cfg *config.Config) ([]lsp.TextEdit, error) {
@@ -135,6 +135,15 @@ func Eval(node ast.Node, env *formatEnvironment) ast.Node {
 func formatItem(node ast.Node, env *formatEnvironment) ast.Node {
 	results := []ast.Node{node}
 
+	todoAfterMatcher := astutil.NodeMatcher{
+		ExpectTokens: []token.Kind{
+			token.SQLKeyword,
+		},
+	}
+	if todoAfterMatcher.IsMatch(node) {
+		results = append(results, whitespaceNode)
+	}
+
 	whitespaceAfterMatcher := astutil.NodeMatcher{
 		ExpectKeyword: []string{
 			"JOIN",
@@ -144,6 +153,8 @@ func formatItem(node ast.Node, env *formatEnvironment) ast.Node {
 			"LIMIT",
 			"WHEN",
 			"ELSE",
+			// "CREATE",
+			// "TABLE",
 		},
 	}
 	if whitespaceAfterMatcher.IsMatch(node) {
@@ -211,9 +222,16 @@ func formatItem(node ast.Node, env *formatEnvironment) ast.Node {
 			"FROM",
 			"WHERE",
 			"HAVING",
+			// "CREATE",
+			// "TABLE",
+			// "(",
 		},
 		ExpectTokens: []token.Kind{
+			// TODO: only if in a query
+			// TODO: only if in a query
 			token.LParen,
+			// TODO: only if in a query
+			// TODO: only if in a query
 		},
 	}
 	if linebreakWithIndentAfterMatcher.IsMatch(node) {

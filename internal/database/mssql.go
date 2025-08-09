@@ -10,7 +10,7 @@ import (
 	"strconv"
 
 	_ "github.com/denisenkom/go-mssqldb"
-	"github.com/sqls-server/sqls/dialect"
+	"github.com/yaamai/sqls/dialect"
 	"github.com/jfcote87/sshdb"
 	"github.com/jfcote87/sshdb/mssql"
 	"golang.org/x/crypto/ssh"
